@@ -2,6 +2,8 @@
     --dark:#19283f;
     --green:#33d1cc;
     --red:#ff3150;
+    --section:#eff7fa;
+    --yellow:#ffc400;
 }
 
 *{
@@ -14,6 +16,17 @@ body{
     font-family: "Roboto", serif !important;
 }
 
+
+.main-title::after{
+    content: "";
+    position: absolute;
+    width: 120px;
+    height: 2px;
+    background-color: var(--green);
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
 /* start navbar */
 .navbar{
     background-color: var(--dark);
@@ -54,3 +67,100 @@ body{
     min-height: calc( 100vh - 72px );
 }
 /* end landing */
+
+/* start features */
+
+.features .icon-holder {
+    height:200px;
+
+}
+.features .icon-holder i{
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.features .icon-holder .number {
+    font-size: 12rem;
+    color: var(--section);
+}
+
+.features .icon-holder .icon {
+    color: var(--green);
+
+}
+
+.features .feat h4{
+    color: var(--yellow);
+}
+/* end featrues */
+
+
+/* start our work */
+.our-work{
+    background-color: var(--section);
+}
+
+.our-work ul li.active{
+    color:#ffff;
+    background-color: #0d6efd;
+}
+
+.our-work ul li{
+    padding: .5rem 1rem;
+    cursor: pointer;
+}
+.our-work ul li:not(.active):hover{
+    color: var(--red);
+}
+
+.our-work .box{
+    padding: 5px;
+    overflow: hidden;
+    position: relative;
+}
+
+.our-work .box::before{
+    content: attr(data-work);
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    width: 0;
+    height: calc(100% - 10px);
+
+    /* width: calc( 100% - 5px); */
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffff;
+    font-size: 1.5rem;
+    font-weight: 800;
+    background-color: rgb(51 209 204 / 76%);
+    z-index:-1;
+    transition: 0.3s;
+}
+
+.our-work .box:hover::before{
+    width: calc( 100% - 10px);
+    z-index: 1;
+ 
+    
+}
+
+.stuff .desc{
+    max-width: 500px ;
+}
+/* end our-work */
+
+/* start our team */
+.team{
+    background-color: var(--section);
+}
+
+.team h4{
+    background-color: var(--green);
+    padding: 5px 10px;
+}
+/* end our team */
+
+
